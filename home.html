@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accueil – Codex Mental</title>
+
+  <!-- 🌞 Favicon -->
+  <link rel="icon" href="/img/logo/favicon-96x96.png" sizes="96x96">
+
+  <!-- 🌐 Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
+
+  <!-- 🎨 Styles -->
+ <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- ⚙️ Script principal -->
+<script type="module" src="/assets/js/main.js"></script>
+
+  <style>
+  /* Bloc collapsible harmonisé avec le style AI-déalisation */
+details.cm-collapse {
+  font-size: 0.85rem; /* même taille que ton texte courant */
+  margin: 1rem 0;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05); /* fond légèrement transparent */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+/* Titre du bloc (toujours visible) */
+details.cm-collapse > summary {
+  font-size: 1rem; /* légèrement plus grand que le corps */
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.08); /* bandeau légèrement plus clair */
+  list-style: none; /* supprime le triangle par défaut */
+  position: relative;
+}
+
+/* Ajout d'un petit indicateur flèche personnalisée */
+details.cm-collapse > summary::after {
+  content: "▸";
+  position: absolute;
+  right: 1rem;
+  transition: transform 0.2s ease;
+}
+details.cm-collapse[open] > summary::after {
+  transform: rotate(90deg);
+}
+
+/* Corps du bloc (caché jusqu'à ouverture) */
+.cm-collapse-body {
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+</style>
+
+</head>
+
+<body class="theme-stellaire home">
+  <!-- 🌌 Canvas de fond -->
+  <canvas id="theme-canvas" style="position:fixed; top:0; left:0; z-index:-1;"></canvas>
+
+  <!-- 🧠 Menu injecté dynamiquement -->
+<header id="menu-placeholder"></header>
+ 
+
+  <!-- 🧱 Contenu principal -->
+  <main class="container" style="padding-bottom: 3rem;">
+    <h1 class="text-center">Bienvenue dans mon univers</h1>
+
+    <section class="bloc tabs-section">
+  <ul class="tabs">
+    <li class="tab active" data-tab="bienvenue">Bienvenue</li>
+    <li class="tab" data-tab="apropos">A propos</li>
+  </ul>
+
+  <div class="tab-contents">
+
+    <div class="tab-content active" id="bienvenue">
+      <h2>Bienvenue</h2>
+      <p>
+        Bienvenue dans un espace hors du temps,<br>
+        un lieu pour ralentir, ressentir, et se reconnecter.<br>
+        Ici commence un chemin doux, fait de lumière, de silence,<br>
+        et d’intentions posées comme des étoiles dans l’obscurité.
+      </p>
+      <p>
+        Que ce site soit un espace de respiration,<br>
+        un carnet d’exploration spirituelle,<br>
+        un sanctuaire pour accueillir la paix en soi.
+      </p>
+    </div>
+
+        <div class="tab-content active" id="apropos">
+      <h2>A propos</h2>
+      <p>
+        message à propos de ce site
+    </div>
+
+   
+</div>
+    </section>
+
+
+
+     <!-- Bloc contenu ajouté -->
+    <section class="bloc">
+      <h2>Contenus ajoutés récemment</h2>
+      <ul>
+        <li>📰 Ajout d'articles         <ul>
+          <li>....</li>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Bloc structuré en 2 colonnes avec sous-sections -->
+    <section class="section-2cols">
+
+      <!-- Bloc structure & fonction -->
+<div class="bloc-half"> 
+  <h2>BLOC 1</h2>
+  
+</div>
+
+<!-- Bloc effets visuels & roadmap -->
+<div class="bloc-half">
+   <h2>BLOC 2</h2>
+
+</div>
+
+
+
+  
+
+<!-- 📦 Espace réservé pour compenser dynamiquement -->
+<div style="height: 2.5rem;"></div>
+
+  </main>
+
+  <!-- 🌙 Widget lunaire généré dynamiquement si thème = lunaire -->
+
+  <!-- 🦶 Footer injecté dynamiquement -->
+  <div id="footer-placeholder"></div>
+
+  <!-- 🍪 Info bannière cookies -->
+  <div id="cookie-banner">
+  <span>
+    Ce site utilise des cookies pour améliorer votre expérience.
+    <a href="/mentions/politique-confidentialite.html" target="_blank">en savoir plus</a> ?
+  </span>
+  <button id="cookie-accept" aria-label="Accepter les cookies">OK</button>
+</div>
+
+
+</body>
+</html>
