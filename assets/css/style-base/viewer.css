@@ -1,0 +1,246 @@
+
+/* === 🧾 VIEWER.CSS – Codex Mental (Blog + Atelier) === */
+/* Gère #article-viewer (et #viewer), pour PC et mobile */
+
+#article-viewer,
+#viewer {
+  flex: 1;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: var(--bloc-bg, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--bloc-border, rgba(255, 255, 255, 0.15));
+  box-shadow: 0 0 20px var(--bloc-shadow, rgba(0, 0, 0, 0.2));
+  min-height: 400px;
+  line-height: 1.7;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* Placeholder et contenu vide */
+#article-viewer .placeholder,
+#viewer .placeholder {
+  opacity: 0.6;
+  font-style: italic;
+  color: var(--text-secondary, #ccc);
+}
+#article-viewer .erreur,
+#viewer .erreur {
+  color: #ff7070;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+#article-viewer > * + *,
+#viewer > * + * {
+  margin-top: 1rem;
+}
+
+#article-viewer em,
+#viewer em,
+#article-viewer i,
+#viewer i {
+  font-style: italic !important;
+}
+
+#article-viewer h1,
+#viewer h1,
+#article-viewer h2,
+#viewer h2 {
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+#article-viewer p,
+#viewer p {
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+  font-size: 1rem;
+  white-space: normal;
+}
+
+/* Blockquotes et figures */
+#article-viewer blockquote,
+#viewer blockquote,
+#article-viewer figure,
+#viewer figure,
+#article-viewer figcaption,
+#viewer figcaption {
+  display: block;
+  white-space: normal;
+  writing-mode: initial;
+  overflow-wrap: break-word;
+  transform: none;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+}
+
+#article-viewer blockquote,
+#viewer blockquote {
+  border-left: 4px solid rgba(255,255,255,0.15);
+  padding-left: 1rem;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+#article-viewer figcaption,
+#viewer figcaption {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+/* Menu latéral adaptatif pour blog */
+.blog-layout #viewer-menu {
+  width: auto;          /* largeur flexible */
+  max-width: 300px;     /* limite en écran large */
+}
+
+/* Liens de menu, pour éviter qu'un titre bien long agrandisse le menu */
+#viewer-menu ul li a {
+  display: block;
+  max-width: 280px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  /* Ajoute éventuellement ellipsis si besoin :
+     text-overflow: ellipsis;
+     overflow: hidden; */
+}
+
+/* === 🔹 Codex Note Style (hérité de layout.css) === */
+#article-viewer .codex-note,
+#viewer .codex-note {
+  margin-top: 2rem;
+  margin-bottom: 2em;
+  padding: 1.2rem;
+  border-left: 4px solid var(--color-accent, #5cf);
+  background-color: var(--bg-subtle, rgba(0, 0, 32, 0.7)); /* ta valeur par défaut + fallback */
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #ccd6f6);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#article-viewer .codex-note p,
+#viewer .codex-note p {
+  margin-bottom: 0.9em;
+}
+
+#article-viewer .codex-note h4,
+#viewer .codex-note h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-accent, #5cf);
+}
+
+#article-viewer .codex-note:hover,
+#viewer .codex-note:hover {
+  box-shadow: 0 0 8px var(--color-accent, #5cf);
+}
+
+.note-small {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* ⚙️ Surcharge spécifique au thème solaire */
+body.theme-solar .codex-note {
+  background-color: rgba(255, 255, 210, 0.2); /* jaune doux transparent */
+  color: #333;
+  border-left-color: #d88; /* accent chaud pour se détacher */
+}
+
+body.theme-solar .codex-note h4 {
+  color: #aa5500; /* accent chaud pour les titres */
+}
+
+
+/* === Responsive === */
+@media screen and (max-width: 768px) {
+  #article-viewer,
+  #viewer {
+    padding: 1rem !important;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  #article-viewer h1,
+  #viewer h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  #article-viewer h2,
+  #viewer h2 {
+    font-size: 1.2rem;
+  }
+
+  #article-viewer p,
+  #viewer p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  #article-viewer *,
+  #viewer * {
+    display: block;
+    white-space: normal;
+    writing-mode: initial;
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #article-viewer *,
+  #viewer * {
+    display: block;
+    white-space: normal;
+    writing-mode: initial;
+    transform: none;
+  }
+
+  #article-viewer table,
+  #viewer table,
+  #article-viewer table *,
+  #viewer table * {
+    display: table !important;
+    white-space: normal !important;
+  }
+
+  #article-viewer table tr,
+  #viewer table tr {
+    display: table-row !important;
+  }
+
+  #article-viewer table td,
+  #viewer table td,
+  #article-viewer table th,
+  #viewer table th {
+    display: table-cell !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #article-viewer table,
+  #article-viewer table thead,
+  #article-viewer table tbody,
+  #article-viewer table tr,
+  #article-viewer table th,
+  #article-viewer table td,
+  #viewer table,
+  #viewer table thead,
+  #viewer table tbody,
+  #viewer table tr,
+  #viewer table th,
+  #viewer table td {
+    display: revert !important;
+    white-space: revert !important;
+  }
+}

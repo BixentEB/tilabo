@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog – Codex Mental</title>
+
+  <!-- 🌞 Favicon -->
+  <link rel="icon" href="/img/logo/favicon-96x96.png" sizes="96x96">
+
+  <!-- 🌐 Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
+
+  <!-- 🎨 Styles principaux -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- 🎨 Styles du menu burger viewer -->
+  <link rel="stylesheet" href="/assets/css/viewer-menu.css">
+
+  <!-- ⚙️ Script principal -->
+  <script type="module" src="/assets/js/main.js"></script>
+</head>
+
+<body class="theme-stellaire">
+  <!-- 🌌 Canvas de fond -->
+  <canvas id="theme-canvas" style="position:fixed; top:0; left:0; z-index:-1;"></canvas>
+
+  <!-- 🧠 Menu principal (injecté dynamiquement) -->
+  <header id="menu-placeholder"></header>
+
+  <!-- 📚 Contenu principal du blog -->
+  <main class="blog-layout">
+    
+    <!-- 🟢 OPTION A : Ici tu peux insérer le menu fusionné (côté gauche) -->
+   <div id="viewer-menu-container">
+  <nav id="viewer-menu" class="blog-menu">
+    <div class="viewer-menu-header">
+      <h2>📚 Articles</h2>
+      <button id="viewer-menu-close" aria-label="Fermer le menu">×</button>
+    </div>
+
+    <!-- Sections du menu -->
+    <details>
+      <summary>🤖 Intelligence Artificielle</summary>
+      <ul>
+        <li><a href="#" data-viewer="ai/local">Installer une IA en local ?</a></li>
+        <li><a href="#" data-viewer="ai/limites" data-date="2025-08-04">L'IA et ses limites</a></li>
+        <li><a href="#" data-viewer="ai/simulsens" data-date="2025-08-04">Simuler, ressentir, dire</a></li> 
+        <li><a href="#" data-viewer="ai/decalage" data-date="2025-08-09">Accès & Décalage</a></li> 
+        <li><a href="#" data-viewer="ai/democratisation" data-date="2025-08-09"> Démocratisation & Développement</a></li> 
+        <li><a href="#" data-viewer="ai/aivie">La place de l'IA dans ma vie</a></li>
+      
+      </ul>
+      <hr align="center" width="50">
+      <ul>
+        <li><a href="#" data-viewer="ai/miroirintro">Miroir de l'humanité</a></li>
+        <li><a href="#" data-viewer="ai/miroir0">0. Genèse</a></li>
+        <li><a href="#" data-viewer="ai/miroir1">1. Révélation</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>🧠 Psychologie</summary>
+      <ul>
+        <li><a href="#" data-viewer="psy/cameleon">Le syndrome du caméléon</a></li>
+        <li><a href="#" data-viewer="psy/article2">Surfonctionner sans s’effondrer</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>🧬 Haut Potentiel</summary>
+      <ul>
+        <li><a href="#" data-viewer="hp/cameleon">Pensée arborescente et adaptation</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>📖 Philosophie</summary>
+      <ul>
+        <li><a href="#" data-viewer="philo/intangible">Conscience et Réalité : Intangibilité</a></li>
+        <li><a href="#" data-viewer="philo/identite" data-date="2025-08-22">Qui suis-je ?</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>🌌 États modifiés de conscience</summary>
+      <ul>
+        <li><a href="#" data-viewer="altstates/revelucide">Rêves lucides</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>🧪 Exploration</summary>
+      <ul>
+        <li><a href="#" data-viewer="exploration/explo">Expériences personnelles</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>🌙 Rêves & Onirisme</summary>
+      <ul>
+        <li><a href="#" data-viewer="reves/intro">Introduction sur les rêves</a></li>
+        <hr align="center" width="50">
+        <li><a href="#" data-viewer="reves/reves">🌙 Rêves</a></li>
+        <li><a href="#" data-viewer="reves/cauchemars">⚠️ Cauchemars</a></li>
+        <li><a href="#" data-viewer="reves/paralysis">🧊 Paralysies du sommeil</a></li>
+        <li><a href="#" data-viewer="reves/experiences">🔮 Expériences atypiques</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>🔮 Symbolique & ésotérisme</summary>
+      <ul>
+        <li><a href="#" data-viewer="symbol/tarot/intro">TAROT</a></li>
+        <li><a href="#" data-viewer="symbol/tarot/13">XIII. MORT</a></li>
+        <hr align="center" width="50">
+        <li><a href="#" data-viewer="symbol/symbolisme">Sorcières et Lumières</a></li>
+        <li><a href="#" data-viewer="symbol/synchronicite-numerique">Synchronicités numériques</a></li>
+      </ul>
+    </details>
+
+        <details>
+      <summary>👁‍🗨 Introspection</summary>
+      <ul>
+        <li><a href="#" data-viewer="introspection/seulsilence" data-date="2025-08-09">Penser seul, douter en silence</a></li>
+      </ul>
+    </details>
+
+
+    <details>
+      <summary>📝 Réflexions personnelles</summary>
+      <ul>
+        <li><a href="#" data-viewer="reflexions/reflexions">Réflexions générales</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>🦊 Expression libre<br>- Mr ChatGPT -</summary>
+      <ul>
+        <li><a href="#" data-viewer="aiautor/intro">Introduction</a></li>
+        <li><a href="#" data-viewer="aiautor/manifeste">Manifeste du Code Partagé</a></li>
+        <li><a href="#" data-viewer="aiautor/complexa">Complexité apprivoisée</a></li>
+      </ul>
+    </details>
+  </nav>
+
+  <!-- Bouton burger mobile -->
+  <button id="viewer-menu-burger" aria-label="Ouvrir le menu des articles">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</div>  
+    <!-- 🟢 OPTION B : Si tu veux le mettre ailleurs (ex: avant le main), tu peux :
+      <div id="viewer-menu-container"> ... </div>
+    -->
+
+    <!-- 📖 Visualiseur d'article -->
+    <section id="article-viewer">
+      <div class="placeholder">
+        <h2>Bienvenue dans le blog</h2>
+        <p>Sélectionnez un article à gauche pour l'afficher ici.</p>
+        <br><br><br><br>
+        <blockquote style="font-style: italic; font-size: 0.95rem; border-left: 4px solid rgba(0,0,0,0.1); padding-left: 1rem;">
+          « Si l'IA avait existé à l'époque des pharaons, la grande bibliothèque aurait bien pu partir en cendres, la mémoire du monde, elle, n'aurait jamais brûlé. »
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <!-- 🦶 Footer injecté dynamiquement -->
+  <div id="footer-placeholder"></div>
+
+  <!-- 📜 Scripts -->
+  <script src="/assets/js/viewer.js"></script>
+  <script src="/assets/js/viewer-menu.js"></script>
+  <!-- 🔹 Si tu n'utilises plus l'injection dynamique, tu peux supprimer menu-loader.js -->
+  <!-- <script src="/assets/js/menu-loader.js"></script> -->
+</body>
+</html>

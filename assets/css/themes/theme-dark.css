@@ -1,0 +1,94 @@
+/* ===============================
+   Thème sombre — Nuit étoilée (autonome, style Codex plus lumineux)
+   =============================== */
+
+:root[data-theme="dark"] {
+  /* bleu-nuit plus clair */
+  --bg-color: radial-gradient(
+    ellipse at 50% 100%,
+    #13233f 0%,
+    #0f1f37 55%,
+    #0b1a2e 100%
+  );
+
+  --text-color: #eaf4ff;
+  --muted-color: #c2d6f8;
+  --link-color: #a6c8ff;
+  --accent-color: #7fd1ff;
+
+  --header-bg: rgba(16, 28, 48, 0.52);
+  --footer-bg: rgba(16, 28, 48, 0.52);
+
+  --nav-hover-bg: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+/* halo léger pour alléger le haut de l'écran */
+[data-theme="dark"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 26%, rgba(160, 195, 255, 0.08), transparent 60%);
+  z-index: 0; /* sous le contenu, au-dessus du fond */
+}
+
+/* Canvas étoiles : au-dessus du fond, sous le contenu (z=0) */
+[data-theme="dark"] #theme-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;      /* ⚠️ pas -1 */
+  opacity: 1;      /* la visibilité est confirmée dans theme.js */
+  pointer-events: none;
+}
+
+/* Header & footer translucides */
+[data-theme="dark"] header,
+[data-theme="dark"] footer {
+  background: var(--header-bg);
+  color: var(--text-color);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Liens */
+[data-theme="dark"] a {
+  color: var(--link-color);
+  transition: color .25s ease, text-shadow .25s ease, background .25s ease;
+}
+
+[data-theme="dark"] a:hover {
+  color: var(--accent-color);
+  text-shadow: 0 0 6px rgba(127, 209, 255, .5);
+}
+
+/* Bouton thème */
+[data-theme="dark"] #theme-btn {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  transition: transform .2s ease, text-shadow .25s ease;
+}
+
+[data-theme="dark"] #theme-btn:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 8px rgba(127, 209, 255, .7);
+}
+
+/* Hover du menu */
+[data-theme="dark"] .menu-primary a:hover {
+  background: var(--nav-hover-bg);
+  border-radius: 6px;
+}
+
+/* pas de plaques opaques côté contenu */
+[data-theme="dark"] main,
+[data-theme="dark"] .home-shell,
+[data-theme="dark"] .welcome,
+[data-theme="dark"] section {
+  background: transparent !important;
+}
