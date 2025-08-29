@@ -1,167 +1,126 @@
-html, body {
+/* Reset minimal */
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Orbitron', sans-serif;
-  overflow: hidden;
-  background: #00172B;
+  box-sizing: border-box;
 }
 
-/* Conteneur plein écran */
-#intro-container {
-  position: fixed;
-  top: 0;
-  left: 0;
+body, html {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 9999;
-  background: #0a2239; /* Bleu profond discret */
+  font-family: "Cinzel", serif;
+  background: 
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.3), transparent 60%),
+    linear-gradient(180deg, #dcd2f0, #c8b7e6); /* halo + fond doux */
+  background-size: 150% 150%, cover;
+  animation: haloPulse 12s ease-in-out infinite;
+  color: #fff;
 }
 
-/* Image plein écran */
-#intro-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  animation: slowZoom 30s ease-in-out infinite alternate;
-}
-
-/* Animation de zoom lent */
-@keyframes slowZoom {
-  0% {
-    transform: scale(1.07); /* Démarre déjà zoomé un peu */
+/* Animation halo doux */
+@keyframes haloPulse {
+  0%, 100% {
+    background-size: 140% 140%, cover;
+    background-position: 50% 35%, center;
   }
-  100% {
-    transform: scale(1.1);  /* Zoom un peu plus */
+  50% {
+    background-size: 160% 160%, cover;
+    background-position: 50% 38%, center;
   }
 }
 
 /* Canvas étoiles */
 #stars-canvas {
   position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-  z-index:1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: transparent;
 }
 
-/* Contenu centré */
+/* Contenu centré (remonté et espacé) */
 #intro-content {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -20%);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
   text-align: center;
-  z-index:2;
-}
-
-/* Logo */
-#intro-logo {
-  width: 200px; /* ou la taille que tu veux */
-  margin-bottom: 1em;
-  filter: brightness(0) invert(1);
   opacity: 0;
-  transition: opacity 2s ease;
+  animation: fadeIn 2s ease forwards;
+  padding-top: 15vh;
+  gap: 60px;
 }
-#intro-logo.show {
-  opacity: 1;
-}
-
 
 /* Titre */
-#intro-content h1 {
-  color: white;
+#intro-logo {
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow:
+    1px 1px 3px rgba(0, 0, 0, 0.25),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
   opacity: 0;
-  margin: 0.3em 0;
-  animation: fadeInText 2s forwards 1s;
+  transform: translateY(-20px);
+  animation: slideFadeIn 2s ease forwards 0.5s;
 }
 
-/* Phrase */
-.subtitle {
-  color: white;
+/* Sous-titre manuscrit avec effet écriture */
+#intro-subtitle {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: #ffffff;
   opacity: 0;
-  margin: 0.3em 0;
-  animation: fadeInText 2s forwards 2s;
+  margin-bottom: 40px;
+  animation: fadeIn 2s ease forwards 1.5s; /* 2s = durée, 1.5s = délai */
 }
 
-/* Signature en bas droite */
-#signature {
-  color: white;
-  font-family: 'Great Vibes', cursive; /* Autre possibilité : Sacramento */
-  font-size: 1.2em;
-  opacity: 0;
-  animation: fadeInText 2s forwards 3s;
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  z-index:2;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-/* Bouton en bas centré */
+
+/* Bouton raffiné */
 #enter-btn {
-  position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0.6em 1.5em;
-  background: rgba(0,0,0,0.5);
-  border: 1px solid #fff;
-  color: #fff;
-  font-size: 0.80em;
-  opacity: 0;
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
   cursor: pointer;
-  animation: fadeInText 2s forwards 4s;
-  border-radius: 4px;
-  transition: background 0.3s, transform 0.3s;
+  background: #8f7cc5;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 2px 6px rgba(0,0,0,0.25),
+    inset 0 1px 2px rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards 2.5s;
 }
+
 #enter-btn:hover {
-  background: rgba(255,255,255,0.1);
-  transform: translateX(-50%) scale(1.05);
+  background: #7a69ad;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 
+    0 4px 10px rgba(0,0,0,0.3),
+    inset 0 1px 2px rgba(255,255,255,0.3);
 }
 
-#intro-note {
-  position: absolute;
-  bottom: 0.8em; /* Un peu au-dessus du bord */
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.6em;
-  opacity: 0.3;
-  color: rgba(255, 255, 255, 0.4);
-  font-style: italic;
-  pointer-events: none; /* Pour qu’on ne puisse pas le sélectionner */
-}
-
-
-/* Animations */
-@keyframes fadeInLogo {
-  to { opacity: 1; }
-}
-@keyframes fadeInText {
+/* Animations fade */
+@keyframes fadeIn {
   to { opacity: 1; }
 }
 
-/* Responsive mobile */
-@media (max-width: 768px) {
-  #intro-content {
-    top: 15%;
-    transform: translate(-50%, -15%);
-  }
-  #intro-content h1 {
-    font-size: 1.6em;
-  }
-  .subtitle {
-    font-size: 1em;
-  }
-  #signature {
-    right: 1rem;
-    bottom: 1rem;
-  }
-  #enter-btn {
-    bottom: 1rem;
-  }
+@keyframes slideFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
