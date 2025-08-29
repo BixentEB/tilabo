@@ -1,46 +1,34 @@
-<!-- 🧭 MENU GLOBAL -->
-
-<!-- 🖥️ Menu principal (desktop sticky) -->
-<header class="header">
-  <a href="/index.html" class="site-title secret-link">Codex Mental</a>
-  <nav class="main-nav">
-    <a href="/home.html" class="nav-link">Home</a>
-    <a href="/blog/blog.html" class="nav-link">Blog</a>
-    <a href="/atelier/atelier.html" class="nav-link">Atelier</a>
-    <a href="/dashb/index.html" class="nav-link">DashB</a>
-    <a href="/profil/index.html" class="nav-link">Profil</a>
-    <a href="/contact.html" class="nav-link">Contact</a>
-  </nav>
-</header>
-
-<!-- ☰ Bouton menu mobile -->
-<button id="menu-toggle" class="menu-toggle" aria-label="Ouvrir le menu mobile">☰</button>
-
-<!-- 🌌 Bouton flottant pour menu thème (desktop only) -->
-<div class="theme-fab-container">
-  <button id="theme-fab" aria-label="Changer de thème">🌌</button>
-  <div class="theme-fab-options hidden">
-    <button onclick="setTheme('theme-solaire')">🌞</button>
-    <button onclick="setTheme('theme-lunaire')">🌙</button>
-    <button onclick="setTheme('theme-galactique')">🪐</button>
-    <button onclick="setTheme('theme-stellaire')">✨</button>
+<header class="site-header">
+  <div class="site-title">
+    <a href="/index.html" title="Retour à l’intro (easter egg)">TECHNIQUE INTENTION</a>
   </div>
-</div>
 
-<!-- 📱 Menu mobile déroulant -->
-<nav id="mobile-menu" class="mobile-menu">
-  <ul>
-    <li><a href="/home.html" class="nav-link">Home</a></li>
-    <li><a href="/blog/blog.html" class="nav-link">Blog</a></li>
-    <li><a href="/atelier/atelier.html" class="nav-link">Atelier</a></li>
-    <li><a href="/dashb/index.html" class="nav-link">DashB</a></li>
-    <li><a href="/profil/index.html" class="nav-link">Profil</a></li>
-    <li><a href="/contact.html" class="nav-link">Contact</a></li>
-    <li><hr></li>
-    <li><strong>🎨 Thèmes</strong></li>
-    <li><button onclick="setTheme('theme-solaire')">Solaire</button></li>
-    <li><button onclick="setTheme('theme-lunaire')">Lunaire</button></li>
-    <li><button onclick="setTheme('theme-galactique')">Galactique</button></li>
-    <li><button onclick="setTheme('theme-stellaire')">Stellaire</button></li>
-  </ul>
+  <nav class="menu-primary">
+    <a href="/home.html">Accueil</a>
+    <a href="/bases/bases.html">Bases</a>
+    <a href="/psycho/psychologie.html">Psychologie</a>
+    <a href="/spirit/spiritualite.html">Spiritualité</a>
+    <a href="/comm/communication.html">Communication</a>
+    <a href="/magne/magnetisme.html">Magnétisme</a>
+    <a href="https://techniqueintention.forumactif.com/" target="_blank" rel="noopener">Forum</a>
+  </nav>
+
+  <div class="menu-switch">
+    <button id="theme-btn" aria-label="Basculer le thème">🌙</button>
+  </div>
+
+<!-- Bouton burger (mobile only) -->
+<button id="mb-burger" class="mb-burger" aria-label="Ouvrir le menu" aria-controls="mb-drawer" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- Tiroir mobile (le contenu sera cloné depuis .menu-primary) -->
+<nav id="mb-drawer" class="mb-drawer" aria-label="Menu mobile" hidden>
+  <ul class="mb-list"></ul>
 </nav>
+
+<!-- Voile -->
+<div id="mb-scrim" class="mb-scrim" hidden></div>
+
+  
+</header>
